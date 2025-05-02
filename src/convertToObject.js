@@ -15,7 +15,10 @@ function convertToObject(sourceString) {
 
   for (let i = 0; i < filterByLines.length; i++) {
     const [key, value] = filterByLines[i].split(':');
-    stylesObj[key.trim()] = value.trim();
+
+    if (key && value) {
+      stylesObj[key.trim()] = value.trim();
+    }
   }
 
   return stylesObj;
